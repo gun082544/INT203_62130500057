@@ -87,12 +87,11 @@
                     <p class="text-gray-300 text-sm">{{ releaseDate }}</p>
                 </div>
 
-                <div class="flex flex-row flex-auto space-x-1">
-                    <button
-                        class=" w-28 h-10 bg-green-500 border-2 border-gray-400 block py-2 px-8 rounded-full text-gray-200 hover:bg-green-400 hover:text-black">เล่น</button>
+                <div class="flex flex-row flex-auto space-x-3">
+                    <button class=" w-28 h-10 bg-green-500 border-2 border-gray-400 block py-2 px-8 rounded-full text-gray-200 hover:bg-green-400 hover:text-black">เล่น</button>
 
-                    <button
-                        class=" w-28 h-10 bg-transparent border-2 border-gray-400 block py-2 px-6 rounded-full text-gray-200 hover:bg-gray-200 hover:text-black">ติดตาม</button>
+                    <button class=" w-28 h-10 bg-transparent border-2 border-gray-400 block py-2 px-6 rounded-full text-gray-200 hover:bg-gray-200 hover:text-black">ติดตาม</button>
+                    <button><span class="material-icons gray2 mt-2 hover:text-gray-100">linear_scale</span></button>
                 </div>
 
             </div>
@@ -101,27 +100,28 @@
     </div>
 
     <!-- Songs List -->
-    <div class="bg-gray-900 space-y-6">
+    <div class="bg-gray-900 h-full space-y-6 mb-8">
         <p class="flex ml-96 mt-8 text-white text-2xl">ลิสต์เพลงทั้งหมด</p>
         <div v-for="song in songs" class="flex hover:bg-gray-800 ml-96 mr-96">
-            <div class="ml-3 mt-3 p-3 w-8 flex-shrink-0 text-white">▶</div>
+            <button class="ml-3 mt-3 p-3 w-8 flex-shrink-0 text-white hover:text-gray-100">▶</button>
             <div class="ml-14 p-3 w-full text-white leading-6">{{ song.nameSong }} <br>{{ song.artist }}</div>
             <div class="mt-6 flex-shrink-0 space-x-2 pr-10">
-                <button><span class="material-icons white">list</span></button>
-                <button><span class="material-icons white">grade</span></button>
-                <button><span class="material-icons white">open_in_new</span></button>
+                <button><span class="material-icons gray2">list</span></button>
+                <button><span class="material-icons gray2">grade</span></button>
+                <button><span class="material-icons gray2">open_in_new</span></button>
             </div>
         </div>
     </div>
-
     <!-- Bottom Bar -->
-    <div class="fixed bottom-0 bg-black h-14 w-full flex flex-row justify-between pl-8 pr-8">
+    <div class="fixed bottom-0 bg-black h-14 overflow-hidden w-full flex flex-row justify-between pl-8 pr-8">
         <!-- left -->
-        <div class="space-x-2 flex flex-row mt-4">
-            <span class="material-icons gray">shuffle</span>
-            <span class="material-icons gray">skip_previous</span>
-            <span class="material-icons gray">play_circle</span>
-            <span class="material-icons gray">skip_next</span>
+        <div class="space-x-2 flex flex-row mt-2">
+            <div class="rounded-full h-10 w-10 flex bg-gray-600"></div>
+            <button><span class="material-icons gray">shuffle</span></button>
+            <button><span class="material-icons gray">skip_previous</span></button>
+            <button><span class="material-icons gray">play_circle</span></button>
+            <button><span class="material-icons gray">skip_next</span></button>
+            <button><span class="material-icons gray">repeat</span></button>
         </div>
 
         <!-- center -->
@@ -134,21 +134,24 @@
         </div>
 
         <!-- right -->
-        <div class="space-x-12 flex flex-row mt-4">
+        <div class="space-x-12 flex flex-row mt-2">
             <div class="space-x-3 flex flex-row">
-                <span class="material-icons gray">volume_up</span>
-                <hr size="10" class="w-14 mt-3 bg-gray-600 h-1 border-none" />
-                <span class="material-icons gray">library_books</span>
+                <button><span class="material-icons gray">volume_up</span></button>
+                <button>
+                    <hr size="10" class="w-14 mt-3 bg-gray-600 h-1 border-none mb-4" />
+                </button>
+                <button><span class="material-icons gray">library_books</span></button>
             </div>
-            <span class="material-icons gray">list</span>
+            <button><span class="material-icons gray">list</span></button>
         </div>
     </div>
-
 </div>
 
 <!-- Side Bar -->
+<div class="bg-red-100">
+    <p class="text-white">testtt
+    </p>
 </div>
-
 </html>
 
 <script src="main.js"></script>
@@ -156,6 +159,12 @@
 <style>
     .material-icons.gray {
         color: gray
+    }
+    .material-icons.gray2 {
+        color: gray
+    }
+    .material-icons.gray2:hover {
+        color: white
     }
 
     .material-icons.white {
