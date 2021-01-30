@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/joox_mini_logo.ico" sizes="32x32">
+    <title>JOOX</title>
+    <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+    <!-- Using via Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- https://tailwindcss.com/docs/installation -->
+    <!-- Using Tailwind via CDN -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<div id="selfmade" class="flex flex-col">
+    <!-- Navation Bar -->
+    <div class="fixed bg-black h-14 w-full flex flex-row justify-between">
+        <!-- left -->
+        <div class="flex space-x-3 mt-3 ml-6">
+            <i class="material-icons gray">menu</i>
+            <div>
+                <img src="./images/joox-logo01.png" alt="Joox-logo" width="100" height="50">
+            </div>
+        </div>
+
+        <!-- center -->
+        <div class="flex w-96 h-10 mt-2 ">
+            <input type="text" placeholder="ค้นหาเพลง ศิลปิน อัลบั้ม และเพลย์ลิสต์"
+                class="bg-gray-200 text-gray-800 placeholder-gray-400  pl-2 py-1 w-96" />
+            <button class="bg-gray-200 w-auto flex justify-end items-center">
+                <i class="material-icons">search</i>
+            </button>
+        </div>
+
+        <!-- right -->
+        <ul class=" md:flex md:items-center">
+            <li class="md:ml-4">
+
+                <button
+                    class="rounded-full bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded inline-flex items-center space-x-2">
+                    <span>โหลดแอป JOOX บนพีซี</span>
+                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </li>
+
+            <li class="md:ml-4">
+                <div class="ml-3 relative">
+                    <div>
+                        <button class=" flex text-sm mr-10  space-x-10" id="user-menu" aria-haspopup="true">
+                            <i class=" text-white bg-white pt-3 flex-1">
+                                |
+                            </i>
+                            <img class="h-8 w-8 rounded-full " src="./images/Gun.jpg" alt="profilePic">
+                            <span class="material-icons white mt-1">
+                                keyboard_arrow_down
+                            </span>
+                        </button>
+                    </div>
+            </li>
+        </ul>
+
+
+    </div>
+
+    <!-- Album -->
+    <div class="w-full h-96 bg-gray-800 space-x-10">
+        <div class="flex flex-row ml-96 space-x-10">
+            <!-- Album Cover -->
+            <img class="mt-32" src="./images/SelfmadeCover.jpeg" width="200" height="200">
+            <!-- <div class="mt-32 border-2 border-black h-40 w-96"> -->
+            <!-- Album Details -->
+            <div class="space-y-2">
+                <div class="mt-32 space-y-10">
+                    <div class="space-y-1">
+                        <span
+                            class="uppercase text-green-400 text-xs border-solid border-2 border-green-400 h-5 w-11">Album</span>
+                        <h1 class="mt-0 mb-2 text-white text-4xl">{{ albumName }}</h1>
+                        <p class="text-gray-300 mb-2 text-sm">{{ artist }}</p>
+                    </div>
+                    <p class="text-gray-300 text-sm">{{ releaseDate }}</p>
+                </div>
+
+                <div class="flex flex-row flex-auto space-x-1">
+                    <button
+                        class=" w-28 h-10 bg-green-500 border-2 border-gray-400 block py-2 px-8 rounded-full text-gray-200 hover:bg-green-400 hover:text-black">เล่น</button>
+
+                    <button
+                        class=" w-28 h-10 bg-transparent border-2 border-gray-400 block py-2 px-6 rounded-full text-gray-200 hover:bg-gray-200 hover:text-black">ติดตาม</button>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <!-- Songs List -->
+    <div class="bg-gray-900 space-y-6">
+        <p class="flex ml-96 mt-8 text-white text-2xl">ลิสต์เพลงทั้งหมด</p>
+        <div v-for="song in songs" class="flex hover:bg-gray-800 ml-96 mr-96">
+            <div class="ml-3 mt-3 p-3 w-8 flex-shrink-0 text-white">▶</div>
+            <div class="ml-14 p-3 w-full text-white leading-6">{{ song.nameSong }} <br>{{ song.artist }}</div>
+            <div class="mt-6 flex-shrink-0 space-x-2 pr-10">
+                <button><span class="material-icons white">list</span></button>
+                <button><span class="material-icons white">grade</span></button>
+                <button><span class="material-icons white">open_in_new</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="fixed bottom-0 bg-black h-14 w-full flex flex-row justify-between pl-8 pr-8">
+        <!-- left -->
+        <div class="space-x-2 flex flex-row mt-4">
+            <span class="material-icons gray">shuffle</span>
+            <span class="material-icons gray">skip_previous</span>
+            <span class="material-icons gray">play_circle</span>
+            <span class="material-icons gray">skip_next</span>
+        </div>
+
+        <!-- center -->
+        <div class="w-96">
+            <div class="flex flex-row mt-4 space-x-3 ">
+                <p class="text-gray-600">00.00</p>
+                <hr size="10" class="w-full mt-3 bg-gray-600 h-1 border-none" />
+                <p class="text-gray-600">00.00</p>
+            </div>
+        </div>
+
+        <!-- right -->
+        <div class="space-x-12 flex flex-row mt-4">
+            <div class="space-x-3 flex flex-row">
+                <span class="material-icons gray">volume_up</span>
+                <hr size="10" class="w-14 mt-3 bg-gray-600 h-1 border-none" />
+                <span class="material-icons gray">library_books</span>
+            </div>
+            <span class="material-icons gray">list</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- Side Bar -->
+</div>
+
+</html>
+
+<script src="main.js"></script>
+
+<style>
+    .material-icons.gray {
+        color: gray
+    }
+
+    .material-icons.white {
+        color: white
+    }
+</style>
