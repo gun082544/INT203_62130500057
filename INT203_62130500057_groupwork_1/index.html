@@ -17,58 +17,86 @@
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 
-<div id="selfmade" class="flex flex-col">
-    <!-- Navation Bar -->
-    <div class="fixed bg-black h-14 w-full flex flex-row justify-between">
-        <!-- left -->
-        <div class="flex space-x-3 mt-3 ml-6">
-            <i class="material-icons gray">menu</i>
-            <div>
-                <img src="./images/joox-logo01.png" alt="Joox-logo" width="100" height="50">
-            </div>
+<!-- Sidebar -->
+<!-- <div class="bg-red-100 h-full w-14 ">
+    <h3 class="w3-bar-item">Menu</h3>
+    <a href="#" class="w3-bar-item w3-button">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div> -->
+<!-- Navation Bar -->
+<div class="fixed bg-black h-14 w-full flex flex-row justify-between">
+    <!-- left -->
+    <div class="flex space-x-3 mt-3 ml-6">
+        <i class="material-icons gray">menu</i>
+        <div>
+            <img src="./images/joox-logo01.png" alt="Joox-logo" width="100" height="50">
         </div>
-
-        <!-- center -->
-        <div class="flex w-96 h-10 mt-2 ">
-            <input type="text" placeholder="ค้นหาเพลง ศิลปิน อัลบั้ม และเพลย์ลิสต์"
-                class="bg-gray-200 text-gray-800 placeholder-gray-400  pl-2 py-1 w-96" />
-            <button class="bg-gray-200 w-auto flex justify-end items-center">
-                <i class="material-icons">search</i>
-            </button>
-        </div>
-
-        <!-- right -->
-        <ul class=" md:flex md:items-center">
-            <li class="md:ml-4">
-
-                <button
-                    class="rounded-full bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded inline-flex items-center space-x-2">
-                    <span>โหลดแอป JOOX บนพีซี</span>
-                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                    </svg>
-                </button>
-            </li>
-
-            <li class="md:ml-4">
-                <div class="ml-3 relative">
-                    <div>
-                        <button class=" flex text-sm mr-10  space-x-10" id="user-menu" aria-haspopup="true">
-                            <i class=" text-white bg-white pt-3 flex-1">
-                                |
-                            </i>
-                            <img class="h-8 w-8 rounded-full " src="./images/Gun.jpg" alt="profilePic">
-                            <span class="material-icons white mt-1">
-                                keyboard_arrow_down
-                            </span>
-                        </button>
-                    </div>
-            </li>
-        </ul>
-
-
     </div>
 
+    <!-- center -->
+    <div class="flex w-96 h-10 mt-2 ">
+        <input type="text" placeholder="ค้นหาเพลง ศิลปิน อัลบั้ม และเพลย์ลิสต์"
+            class="bg-gray-200 text-gray-800 placeholder-gray-400  pl-2 py-1 w-96" />
+        <button class="bg-gray-200 w-auto flex justify-end items-center">
+            <i class="material-icons">search</i>
+        </button>
+    </div>
+
+    <!-- right -->
+    <ul class=" md:flex md:items-center">
+        <li class="md:ml-4">
+
+            <button
+                class="rounded-full bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded inline-flex items-center space-x-2">
+                <span>โหลดแอป JOOX บนพีซี</span>
+                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                </svg>
+            </button>
+        </li>
+
+        <li class="md:ml-4">
+            <div class="ml-3 relative">
+                <div>
+                    <button class=" flex text-sm mr-10  space-x-10" id="user-menu" aria-haspopup="true">
+                        <i class=" text-white bg-white pt-3 flex-1">
+                            |
+                        </i>
+                        <img class="h-8 w-8 rounded-full " src="./images/Gun.jpg" alt="profilePic">
+                        <span class="material-icons white mt-1">
+                            keyboard_arrow_down
+                        </span>
+                    </button>
+                </div>
+        </li>
+    </ul>
+
+
+</div>
+
+<!-- Side Bar -->
+<div class="fixed w-14 mt-14 h-96 z-10 bg-black flex flex-col" style="height: 795px">
+    <div class="space-y-3 flex flex-col items-center mt-5">
+        <button><span class="material-icons gray2">public</span></button>
+        <button><span class="material-icons gray2">person</span></button>
+        <button><img src="./images/daimond.png" width="25px" height="25px"></button>
+        <hr class="w-full " style="color: white;">
+    </div>
+
+    <div class="space-y-2 flex flex-col items-center pt-5">
+        <button><span class="material-icons gray2"> person</span></button>
+        <button><span class="material-icons gray2">album</span></button>
+        <button><span class="material-icons gray2">queue_music</span></button>
+        <button><span class="material-icons gray2">equalizer</span></button>
+        <button><span class="material-icons gray2">radio</span></button>
+        <button><span class="material-icons gray2">videocam</span></button>
+    </div>
+
+</div>
+
+
+<div id="selfmade" class="flex flex-col">
     <!-- Album -->
     <div class="w-full h-96 bg-gray-800 space-x-10">
         <div class="flex flex-row ml-96 space-x-10">
@@ -88,20 +116,20 @@
                 </div>
 
                 <div class="flex flex-row flex-auto space-x-3">
-                    <button class=" w-28 h-10 bg-green-500 border-2 border-gray-400 block py-2 px-8 rounded-full text-gray-200 hover:bg-green-400 hover:text-black">เล่น</button>
+                    <button
+                        class=" w-28 h-10 bg-green-500 border-2 border-gray-400 block py-2 px-8 rounded-full text-gray-200 hover:bg-green-400 hover:text-black">เล่น</button>
 
-                    <button class=" w-28 h-10 bg-transparent border-2 border-gray-400 block py-2 px-6 rounded-full text-gray-200 hover:bg-gray-200 hover:text-black">ติดตาม</button>
+                    <button
+                        class=" w-28 h-10 bg-transparent border-2 border-gray-400 block py-2 px-6 rounded-full text-gray-200 hover:bg-gray-200 hover:text-black">ติดตาม</button>
                     <button><span class="material-icons gray2 mt-2 hover:text-gray-100">linear_scale</span></button>
                 </div>
-
             </div>
-            <!-- </div> -->
         </div>
     </div>
 
     <!-- Songs List -->
     <div class="bg-gray-900 h-full space-y-6 mb-8">
-        <p class="flex ml-96 mt-8 text-white text-2xl">ลิสต์เพลงทั้งหมด</p>
+        <p class="flex ml-96 pt-8 text-white text-2xl">ลิสต์เพลงทั้งหมด</p>
         <div v-for="song in songs" class="flex hover:bg-gray-800 ml-96 mr-96">
             <button class="ml-3 mt-3 p-3 w-8 flex-shrink-0 text-white hover:text-gray-100">▶</button>
             <div class="ml-14 p-3 w-full text-white leading-6">{{ song.nameSong }} <br>{{ song.artist }}</div>
@@ -112,46 +140,42 @@
             </div>
         </div>
     </div>
-    <!-- Bottom Bar -->
-    <div class="fixed bottom-0 bg-black h-14 overflow-hidden w-full flex flex-row justify-between pl-8 pr-8">
-        <!-- left -->
-        <div class="space-x-2 flex flex-row mt-2">
-            <div class="rounded-full h-10 w-10 flex bg-gray-600"></div>
-            <button><span class="material-icons gray">shuffle</span></button>
-            <button><span class="material-icons gray">skip_previous</span></button>
-            <button><span class="material-icons gray">play_circle</span></button>
-            <button><span class="material-icons gray">skip_next</span></button>
-            <button><span class="material-icons gray">repeat</span></button>
-        </div>
+</div>
+<!-- Bottom Bar -->
+<div class="fixed bottom-0 bg-black h-14 overflow-hidden w-full flex flex-row justify-between pl-8 pr-8">
+    <!-- left -->
+    <div class="space-x-2 flex flex-row mt-2">
+        <div class="rounded-full h-10 w-10 flex bg-gray-600"></div>
+        <button><span class="material-icons gray">shuffle</span></button>
+        <button><span class="material-icons gray">skip_previous</span></button>
+        <button><span class="material-icons gray">play_circle</span></button>
+        <button><span class="material-icons gray">skip_next</span></button>
+        <button><span class="material-icons gray">repeat</span></button>
+    </div>
 
-        <!-- center -->
-        <div class="w-96">
-            <div class="flex flex-row mt-4 space-x-3 ">
-                <p class="text-gray-600">00.00</p>
-                <hr size="10" class="w-full mt-3 bg-gray-600 h-1 border-none" />
-                <p class="text-gray-600">00.00</p>
-            </div>
-        </div>
-
-        <!-- right -->
-        <div class="space-x-12 flex flex-row mt-2">
-            <div class="space-x-3 flex flex-row">
-                <button><span class="material-icons gray">volume_up</span></button>
-                <button>
-                    <hr size="10" class="w-14 mt-3 bg-gray-600 h-1 border-none mb-4" />
-                </button>
-                <button><span class="material-icons gray">library_books</span></button>
-            </div>
-            <button><span class="material-icons gray">list</span></button>
+    <!-- center -->
+    <div class="w-96">
+        <div class="flex flex-row mt-4 space-x-3 ">
+            <p class="text-gray-600">00.00</p>
+            <hr size="10" class="w-full mt-3 bg-gray-600 h-1 border-none" />
+            <p class="text-gray-600">00.00</p>
         </div>
     </div>
+
+    <!-- right -->
+    <div class="space-x-12 flex flex-row mt-2">
+        <div class="space-x-3 flex flex-row">
+            <button><span class="material-icons gray">volume_up</span></button>
+            <button>
+                <hr size="10" class="w-14 mt-3 bg-gray-600 h-1 border-none mb-4" />
+            </button>
+            <button><span class="material-icons gray">library_books</span></button>
+        </div>
+        <button><span class="material-icons gray">list</span></button>
+    </div>
+</div>
 </div>
 
-<!-- Side Bar -->
-<div class="bg-red-100">
-    <p class="text-white">testtt
-    </p>
-</div>
 </html>
 
 <script src="main.js"></script>
@@ -160,9 +184,11 @@
     .material-icons.gray {
         color: gray
     }
+
     .material-icons.gray2 {
         color: gray
     }
+
     .material-icons.gray2:hover {
         color: white
     }
