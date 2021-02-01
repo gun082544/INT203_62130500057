@@ -1,1 +1,1 @@
-* Use Vue.JS for colecting data of album
+* Use Vue.JS for collecting data of album
